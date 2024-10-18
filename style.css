@@ -1,0 +1,162 @@
+/* Estructura Base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+#container {
+    width: 70%;/*#container debe tener un ancho del 70% del ancho de la pantalla*/
+    margin: 40px auto;/*márgenes superiores e inferiores de 40px */
+    display: flex;
+    background-color: rgb(255, 255, 196);
+    flex-direction: column;
+    height: calc(100vh - 80px);
+}
+
+header {
+    width: 100%;/*La cabecera (header) debe tener un ancho del 100%*/
+    height: 150px;/* una altura de 150px*/
+    background-color: lightblue;/*fondo de color lightblue*/
+    color: darkslategray;/*texto oscuro*/
+    text-align: center;
+    line-height: 150px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#content {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+aside {/*Una barra lateral (aside)*/
+    width: 25%;/*ocupa el 25% del ancho de la pantalla*/
+    background-color: rgb(180, 180, 180);
+    padding: 15px;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#articles {/*La sección de artículos (#articles)*/
+    width: 75%;/*ocupa el 75% del ancho.*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /*margen de 15px entre ellos*/
+    align-content: flex-start; /* Asegura que las filas se peguen lo más posible */
+}
+
+article {
+    width: 25%; /*ocupar un ancho del 25%*/
+    height: 150px;/*altura de 150px*/
+    background-color: green;/*Asigna a los artículos un color de fondo verde*/
+    color: white;/*con texto blanco*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid white;/*borde blanco*/
+    border-radius: 10px;/*con bordes redondeados de 10px.*/
+    box-sizing: border-box;
+    margin-bottom: 5px; 
+}
+
+footer {
+    width: 100%;
+    background-color: red;
+    text-align: left;
+    padding: 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    bottom: 0;
+}
+
+/* Media Queries */
+@media (max-width: 888px) {/*Pantallas medianas (entre 633px y 888px)*/
+    #articles article {
+        width: 40%;/*Los artículos deben ocupar el 40% del ancho de la pantalla*/
+        background-color: red;/*Cambia el fondo de los artículos a rojo en estas resoluciones.*/
+    }
+}
+
+@media (max-width: 680px) {/*Pantallas pequeñas (menos de 680px)*/
+    #articles article {
+        width: 90%;/*Los artículos deben ocupar el 90% del ancho de la pantalla.*/
+        background-color: blue;/*Cambia el fondo de los artículos a azul en estas resoluciones.*/
+    }
+
+    aside {/*La barra lateral debe adaptarse de manera que*/
+        width: 90%;/*Ocupe el 90% del ancho*/
+        background-color: orange;/*Cambia el color de fondo de la barra lateral a naranja*/
+    }
+
+    #articles {
+        width: 100%;/*La sección de artículos (#articles) debe ocupar el 100% del ancho disponible*/
+    }
+}
+
+/* Nuevos Media Queries */
+
+@media (min-width: 888px) and (max-width: 1200px) {/* Pantallas medianamente grandes (entre 888px y 1200px) */
+    #articles article {
+        width: 30%; /*Los artículos deben ocupar el 30% del ancho en este rango*/
+        background-color: purple; /*Se cambia el color de fondo a morado en estas resoluciones.*/
+    }
+
+    aside {
+        width: 30%; /*La barra lateral ocupa el 30% del ancho*/
+    }
+
+    #articles {
+        width: 70%; /*El contenedor de artículos ocupa el 70%*/
+    }
+}
+
+@media (max-width: 480px) {/* Pantallas muy pequeñas (menos de 480px) */
+    #articles article {
+        width: 100%; /*Los artículos ocuparán todo el ancho en pantallas muy pequeñas*/
+        background-color: yellow; /*Fondo amarillo para artículos en pantallas pequeñas*/
+    }
+
+    aside {
+        width: 100%; /*La barra lateral ocupará todo el ancho disponible*/
+        background-color: pink; /*Cambia el fondo de la barra lateral a rosa*/
+    }
+
+    #articles {
+        width: 100%; /*La sección de artículos ocupa todo el ancho*/
+    }
+}
+
+@media (min-width: 1200px) {/* Pantallas grandes (mayores de 1200px) */
+    #articles {
+        gap: 20px; /* Aumentamos el espacio entre artículos sin cambiar el ancho */
+    }
+
+    article {
+        margin-bottom: 10px; /* Damos un poco más de margen inferior a los artículos */
+    }
+
+    header {
+        font-size: 2.3rem; /* Ajustamos ligeramente el tamaño de fuente de la cabecera */
+        padding: 10px 0; /* Añadimos algo de espacio interior a la cabecera */
+    }
+
+    aside {
+        font-size: 1.8rem; /* Aumentamos el tamaño del texto de la barra lateral */
+        padding: 20px; /* Añadimos más espacio interno para darle un aspecto más espacioso */
+    }
+
+    footer {
+        font-size: 1.1rem; /* Incrementamos el tamaño del texto del pie de página */
+        padding: 10px; /* Añadimos algo de espacio en el pie de página */
+    }
+}
